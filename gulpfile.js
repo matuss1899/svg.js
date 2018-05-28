@@ -71,6 +71,7 @@ var parts = [
   'src/textpath.js',
   'src/hyperlink.js',
   'src/marker.js',
+  'src/style.js',
   'src/sugar.js',
   'src/set.js',
   'src/data.js',

@@ -69,6 +69,28 @@ function camelCase (s) {
   })
 }
 
+// Convert camel cased string to string seperated
+function unCamelCase (s) {
+  return s.replace(/([A-Z])/g, function (m, g) {
+    return '-' + g.toLowerCase()
+  })
+}
+
+function cssRule (selector, rule) {
+  if (!selector) return ''
+  if (!rule) return selector
+
+  var ret = selector + '{'
+
+  for (var i in rule) {
+    ret += unCamelCase(i) + ':' + rule[i] + ';'
+  }
+
+  ret += '}'
+
+  return ret
+}
+
 // Capitalize first letter of a string
 function capitalize (s) {
   return s.charAt(0).toUpperCase() + s.slice(1)
